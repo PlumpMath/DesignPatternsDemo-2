@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command\Command.cs" />
+    <Compile Include="Command\ConcreteCommand.cs" />
+    <Compile Include="Command\Invoker.cs" />
+    <Compile Include="Command\Receiver.cs" />
+    <Compile Include="Composite\Component.cs" />
+    <Compile Include="Composite\Composite.cs" />
     <Compile Include="Decorator\Component.cs" />
     <Compile Include="Decorator\ConcreteComponent.cs" />
     <Compile Include="Decorator\ConcreteDecorator.cs" />

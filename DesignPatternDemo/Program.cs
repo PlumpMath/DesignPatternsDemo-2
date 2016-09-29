@@ -1,4 +1,5 @@
-﻿using DesignPatternDemo.Decorator;
+﻿using DesignPatternDemo.Command;
+using DesignPatternDemo.Decorator;
 using DesignPatternDemo.Iterator;
 using DesignPatternDemo.Observer;
 using System;
@@ -52,6 +53,35 @@ namespace DesignPatternDemo
 
             //both ops are called
             decorator.Operation();
+
+            /**
+             * COMMAND
+             **/
+
+            Command.Command command = new ConcreteCommand(new Receiver());
+
+            //create an invoker which in turn calls the command which IN TURN calls the receiver
+            Invoker invoker = new Invoker();
+            invoker.SetCommand(command);
+            invoker.ExecuteCommand();
+
+            /**
+             * COMPOSITE
+             **/
+
+            //instanciate differents persons
+            Composite.Component component1 = new Composite.Composite("Bob");
+            Composite.Component component2 = new Composite.Composite("Patrick");
+            Composite.Component component3 = new Composite.Composite("Johny");
+            Composite.Component component4 = new Composite.Composite("Pierre");
+
+            //affects differents persons to a superior
+            component1.Add(component2);
+            component2.Add(component3);
+            component2.Add(component4);
+
+            //default method for every objects in the tree  
+            component1.Operation();
 
             Console.ReadKey();
         }
