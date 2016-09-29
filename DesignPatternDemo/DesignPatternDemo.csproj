@@ -53,10 +53,14 @@
     <Compile Include="Decorator\ConcreteComponent.cs" />
     <Compile Include="Decorator\ConcreteDecorator.cs" />
     <Compile Include="Decorator\Decorator.cs" />
+    <Compile Include="Interpreter\Expression.cs" />
     <Compile Include="Iterator\Aggregate.cs" />
     <Compile Include="Iterator\ConcreteAggregate.cs" />
     <Compile Include="Iterator\ConcreteIterator.cs" />
     <Compile Include="Iterator\Iterator.cs" />
+    <Compile Include="Memento\CareTaker.cs" />
+    <Compile Include="Memento\Memeto.cs" />
+    <Compile Include="Memento\Originator.cs" />
     <Compile Include="Observer\ConcreteObserver.cs" />
     <Compile Include="Observer\ConcreteSubject.cs" />
     <Compile Include="Observer\Observer.cs" />

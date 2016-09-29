@@ -2,11 +2,8 @@
 using DesignPatternDemo.Decorator;
 using DesignPatternDemo.Iterator;
 using DesignPatternDemo.Observer;
+using DesignPatternDemo.Memento;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DesignPatternDemo
 {
@@ -82,6 +79,25 @@ namespace DesignPatternDemo
 
             //default method for every objects in the tree  
             component1.Operation();
+
+            /**
+             * MEMENTO
+             **/
+
+            Originator originator = new Originator();
+            CareTaker careTaker = new CareTaker();
+
+            //create a couple of states
+            originator.State = "state1";
+            originator.State  = "state2";
+            //save at some point
+            careTaker.Add(originator.SaveToMemento());
+            originator.State = "state3";
+
+            //restore state at the time of the save
+            originator.RestoreStateFromMemento(careTaker.Get(0));
+
+            Console.WriteLine(originator.State);
 
             Console.ReadKey();
         }
